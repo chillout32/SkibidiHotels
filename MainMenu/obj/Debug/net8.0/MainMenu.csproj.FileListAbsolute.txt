@@ -1,0 +1,14 @@
+C:\Users\timbj\repos\skibidihotels\MainMenu\bin\Debug\net8.0\MainMenu.exe
+C:\Users\timbj\repos\skibidihotels\MainMenu\bin\Debug\net8.0\MainMenu.deps.json
+C:\Users\timbj\repos\skibidihotels\MainMenu\bin\Debug\net8.0\MainMenu.runtimeconfig.json
+C:\Users\timbj\repos\skibidihotels\MainMenu\bin\Debug\net8.0\MainMenu.dll
+C:\Users\timbj\repos\skibidihotels\MainMenu\bin\Debug\net8.0\MainMenu.pdb
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.AssemblyInfoInputs.cache
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.AssemblyInfo.cs
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.csproj.CoreCompileInputs.cache
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.dll
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\refint\MainMenu.dll
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.pdb
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\MainMenu.genruntimeconfig.cache
+C:\Users\timbj\repos\skibidihotels\MainMenu\obj\Debug\net8.0\ref\MainMenu.dll
