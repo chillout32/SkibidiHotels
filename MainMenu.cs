@@ -1,7 +1,16 @@
-﻿namespace skibidihotels;
+﻿using System;
+using Npgsql;
+
+namespace skibidihotels;
 
 public class MainMenu
 {
+    private HotelManager _hotelManager;
+
+    public MainMenu()
+    {
+        _hotelManager = new HotelManager();
+    }
     public void start()
     {
         bool run = true;
@@ -12,13 +21,16 @@ public class MainMenu
 
             switch (answer.Trim().ToLower())
             {
-                case "1": break;
+                case "1": 
+                    _hotelManager.RegisterCustomer(); 
+                    break;
                 case "2": break;
                 case "3": break;
                 case "4": break;
                 case "5": break;
                 case "x":
-                    Environment.Exit(0); break;
+                    Environment.Exit(0); 
+                    break;
             }
         }
     }

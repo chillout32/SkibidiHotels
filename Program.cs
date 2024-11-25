@@ -1,4 +1,7 @@
-﻿using skibidihotels;
+﻿using System;
+using Npgsql;
+
+using skibidihotels;
 
 MainMenu menu = new MainMenu();
 
