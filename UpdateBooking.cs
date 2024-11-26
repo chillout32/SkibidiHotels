@@ -13,9 +13,37 @@ public class UpdateBooking
             using (var conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
-                
-                
+
+                string query = @"UPDATE bookings 
+                SET room_id = @RoomID,
+                allinclusive = @AllInclusive,
+                halfpension = @HalfPension,
+                extrabed = @ExtraBed,
+                checkin = @CheckIn,
+                checkout = @CheckOut,
+                peopleamount = @TotalGuests
+                WHERE bookings_id = @BookingID";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("RoomID", roomID);
+                    cmd.Parameters.AddWithValue("AllInclusive", allInclusive);
+                    cmd.Parameters.AddWithValue("HalfPension", halfPension);
+                    cmd.Parameters.AddWithValue("ExtraBed", extraBed);
+                    cmd.Parameters.AddWithValue("CheckIn", newCheckIn);
+                    cmd.Parameters.AddWithValue("CheckOut", newCheckOut);
+                    cmd.Parameters.AddWithValue("TotalGuests", totalGuests);
+                    cmd.Parameters.AddWithValue("BookingID", bookingID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    Console.WriteLine($"{rowsAffected} this is how many have been affected");
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 
@@ -42,13 +70,13 @@ public class UpdateBooking
         string halfpensionInput = Console.ReadLine().ToLower();
         bool halfPension = halfpensionInput == "yes";
         
-        Console.WriteLine("What time do you want to check in");
+        Console.WriteLine("What time do you want to check in (format: yyyy-MM-dd HH:mm)");
         DateTime newCheckIn = DateTime.Parse(Console.ReadLine());
 
         Console.WriteLine("What time do you want to check out (format: yyyy-MM-dd HH:mm):");
         DateTime newCheckOut = DateTime.Parse(Console.ReadLine());
 
-        
+         
         UpdateBookingFunction(bookingID, newCheckIn, newCheckOut, totalGuests, roomID, extraBed, allInclusive, halfPension);
     }
 }

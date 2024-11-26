@@ -6,10 +6,12 @@ namespace skibidihotels;
 public class MainMenu
 {
     private HotelManager _hotelManager;
+    private UpdateBooking _updateBooking;
 
     public MainMenu()
     {
         _hotelManager = new HotelManager();
+        _updateBooking = new UpdateBooking();
     }
     public void start()
     {
@@ -25,7 +27,8 @@ public class MainMenu
                     _hotelManager.RegisterCustomer(); 
                     break;
                 case "2": break;
-                case "3": break;
+                case "3": _updateBooking.UpdateBookingQuestions();
+                    break;
                 case "4": break;
                 case "5": break;
                 case "x":
