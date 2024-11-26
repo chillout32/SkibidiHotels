@@ -9,9 +9,7 @@ public class MainMenu
 
     public MainMenu()
     {
-        DatabaseConnect dbConnect = new DatabaseConnect();
         _registerCustomer = new RegisterCustomer();
-        _registerCustomer.DatabaseConnect(dbConnect);
     }
     public void start()
     {
@@ -24,7 +22,7 @@ public class MainMenu
             switch (answer.Trim().ToLower())
             {
                 case "1": 
-                    _registerCustomer.RegisterCustomer(); 
+                    _registerCustomer.RegisterCustomers(); 
                     break;
                 case "2": break;
                 case "3": break;

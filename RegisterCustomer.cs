@@ -5,7 +5,7 @@ namespace skibidihotels;
 
 public class RegisterCustomer
 {
-    public void RegisterCustomer()
+    public void RegisterCustomers()
     {
         DatabaseConnect _dbConnect = new DatabaseConnect();
         // Questions to get details about customer
@@ -24,16 +24,15 @@ public class RegisterCustomer
         Console.WriteLine("Enter date of birth (yyyy-mm-dd):");
         string dob = Console.ReadLine();
         
-        InsertClientIntoDatabase(DatabaseConnect _dbConnect, firstName, lastName, email, phoneNumber, dob);
+        InsertClientIntoDatabase(_dbConnect, firstName, lastName, email, phoneNumber, dob);
     }
-    private void InsertClientIntoDatabase(string firstName, string lastName, string email, string phoneNumber, string dob)
+    private void InsertClientIntoDatabase(DatabaseConnect _dbConnect, string? firstName, string lastName, string email, string phoneNumber, string dob)
     {
 
         try
         {
             using (var conn = _dbConnect.GetConnection())
             {
-                conn.Open();
 
                 string query = "INSERT INTO clients (firstname, lastname, email, phonenumber, dateofbirth) " +
                                "VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @DateOfBirth)";
