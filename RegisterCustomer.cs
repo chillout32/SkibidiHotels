@@ -3,11 +3,12 @@ using Npgsql;
 
 namespace skibidihotels;
 
-public class HotelManager
+public class RegisterCustomer
 {
     public void RegisterCustomer()
     {
-        // Collect customer details
+        DatabaseConnect _dbConnect = new DatabaseConnect();
+        // Questions to get details about customer
         Console.WriteLine("Enter first name:");
         string firstName = Console.ReadLine();
 
@@ -22,19 +23,15 @@ public class HotelManager
 
         Console.WriteLine("Enter date of birth (yyyy-mm-dd):");
         string dob = Console.ReadLine();
-
-        // Insert into database
-        InsertClientIntoDatabase(firstName, lastName, email, phoneNumber, dob);
+        
+        InsertClientIntoDatabase(DatabaseConnect _dbConnect, firstName, lastName, email, phoneNumber, dob);
     }
-
-    // Method to insert customer into the database
     private void InsertClientIntoDatabase(string firstName, string lastName, string email, string phoneNumber, string dob)
     {
-        string connectionString = "Host=localhost;Username=postgres;Password=7942;Database=postgres";
 
         try
         {
-            using (var conn = new NpgsqlConnection(connectionString))
+            using (var conn = _dbConnect.GetConnection())
             {
                 conn.Open();
 

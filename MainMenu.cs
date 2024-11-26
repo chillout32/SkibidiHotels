@@ -5,11 +5,13 @@ namespace skibidihotels;
 
 public class MainMenu
 {
-    private HotelManager _hotelManager;
+    private RegisterCustomer _registerCustomer;
 
     public MainMenu()
     {
-        _hotelManager = new HotelManager();
+        DatabaseConnect dbConnect = new DatabaseConnect();
+        _registerCustomer = new RegisterCustomer();
+        _registerCustomer.DatabaseConnect(dbConnect);
     }
     public void start()
     {
@@ -22,7 +24,7 @@ public class MainMenu
             switch (answer.Trim().ToLower())
             {
                 case "1": 
-                    _hotelManager.RegisterCustomer(); 
+                    _registerCustomer.RegisterCustomer(); 
                     break;
                 case "2": break;
                 case "3": break;
