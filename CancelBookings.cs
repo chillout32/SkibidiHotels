@@ -3,12 +3,12 @@ using Npgsql;
 
 namespace skibidihotels;
 
-public class UpdateBookings
+public class CancelBookings
 {
     public void CancelBooking()
     {
         
-        string connectionString = "Host=localhost;Username=postgres;Password=trummor;Database=postgres";
+        string connectionString = "Host=localhost;Username=postgres;Password=asdfasdf;Database=postgres";
         
         //Sub Menu Cancel Booking.
         Console.WriteLine("Submit your booking ID:");
@@ -27,13 +27,11 @@ public class UpdateBookings
                     
                     using (var cmd = new NpgsqlCommand(deleteQuery, connection))
                     {
-                        // Add the parameter for the query
+                        
                         cmd.Parameters.AddWithValue("bookings_id", bookingId);  // Use the user-provided booking ID
-
-                        // Execute the DELETE command
+                        
                         int rowsAffected = cmd.ExecuteNonQuery();
-
-                        // Output the result
+                        
                         if (rowsAffected > 0)
                         {
                             Console.WriteLine($"Successfully deleted booking with ID {bookingId}.");
@@ -46,7 +44,6 @@ public class UpdateBookings
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions that occur during database connection or query execution
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
