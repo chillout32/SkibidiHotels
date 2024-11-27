@@ -30,7 +30,7 @@ public class HotelManager
     // Method to insert customer into the database
     private void InsertClientIntoDatabase(string firstName, string lastName, string email, string phoneNumber, string dob)
     {
-        string connectionString = "Host=localhost;Username=postgres;Password=7942;Database=postgres";
+        string connectionString = "Host=localhost;Username=postgres;Password=trummor;Database=postgres";
 
         try
         {
