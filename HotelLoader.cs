@@ -90,6 +90,8 @@ public class HotelLoader{
     public void PrintHotelsAndStars()
     {
         var hotels = LoadInHotelsFromDatabase();
+        
+        QuickAlgorithms.QuickSortStars(hotels, 0, hotels.Count - 1);
 
         foreach (var hotel in hotels)
         {
