@@ -5,26 +5,26 @@ public class QuickAlgorithms
     public static void QuickSortStars(List<loadInHotels> data, int left, int right)
     {
         loadInHotels pivot = data[(left + right) / 2];
-        int leftSide = left;
-        int rightSide = right;
+        int x = left;
+        int q = right;
 
-        while (leftSide <= rightSide)
+        while (x <= q)
         {
-            while (data[leftSide].stars > pivot.stars) leftSide++;
+            while (data[x].stars > pivot.stars) x++;
 
-            while (data[rightSide].stars < pivot.stars) rightSide--;
+            while (data[q].stars < pivot.stars) q--;
 
-            if (leftSide <= rightSide)
+            if (x <= q)
             {
-                loadInHotels temporary = data[leftSide];
-                data[leftSide] = data[rightSide];
-                data[rightSide] = temporary;
-                leftSide++;
-                rightSide--;
+                loadInHotels temporary = data[x];
+                data[x] = data[q];
+                data[q] = temporary;
+                x++;
+                q--;
             }
         }
 
-        if (left < rightSide) QuickSortStars(data, left, rightSide);
-        if (leftSide > right) QuickSortStars(data, leftSide, right);
+        if (left < q) QuickSortStars(data, left, q);
+        if (x > right) QuickSortStars(data, x, right);
     }
 }

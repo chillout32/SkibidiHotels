@@ -32,9 +32,7 @@ public class MainMenu
                 case "3": _updateBooking.UpdateBookingQuestions(); 
                     break;
                 case "4": break;
-                case "5":
-                    _hotelLoader.PrintHotels();
-                    break;
+                case "5": break;
                 case "x":
                     Environment.Exit(0); 
                     break;
