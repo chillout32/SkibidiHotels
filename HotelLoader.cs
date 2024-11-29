@@ -86,4 +86,15 @@ public class HotelLoader{
         }
 
     }
+
+    public void PrintHotelsAndStars()
+    {
+        var hotels = LoadInHotelsFromDatabase();
+
+        foreach (var hotel in hotels)
+        {
+            Console.WriteLine($"Hotel Name: {hotel.hotel_name}");
+            Console.WriteLine($"Stars: {hotel.stars}");
+        }
+    }
 }
