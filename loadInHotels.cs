@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using Npgsql;
+﻿
 
 
 namespace skibidihotels;
