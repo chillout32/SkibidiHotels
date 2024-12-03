@@ -11,6 +11,7 @@ public class MainMenu
     private SortByDstncBeach _sortByDstncBeach = new();
     private SortPrices _sortPrices = new();
     private CancelBookings _cancelBookings = new();
+    private RegisterBooking _registerBooking = new();
     public void start()
     {
         bool run = true;
@@ -39,6 +40,9 @@ public class MainMenu
                 case "6":
                     _cancelBookings.CancelBooking();
                     return;
+                case "7":
+                    _registerBooking.RegisterBookings();
+                    return;
                 case "x":
                     Environment.Exit(0); 
                     return;
@@ -55,6 +59,7 @@ public class MainMenu
         Console.WriteLine("4. Change details in a booking");
         Console.WriteLine("5. List rooms and sort by price");
         Console.WriteLine("6. List bookings and cancel bookings");
+        Console.WriteLine("7. Register booking");
         Console.WriteLine("x. Exit program");
     }
 }
