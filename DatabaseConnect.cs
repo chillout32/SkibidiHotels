@@ -9,7 +9,7 @@ namespace skibidihotels;
 
         public DatabaseConnect()
         {
-            _connectionString = "Host=localhost;Username=postgres;Password=Aqws12aqwsed;Database=postgres";
+            _connectionString = "Host=localhost;Username=postgres;Password=7942;Database=postgres";
         }
 
         public NpgsqlConnection GetConnection()
