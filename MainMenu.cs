@@ -9,6 +9,7 @@ public class MainMenu
     private UpdateBooking _updateBooking;
     private HotelLoader _hotelLoader;
     private SortPrices _sortPrices;
+    private CancelBookings _cancelBookings;
 
     public MainMenu()
     {
@@ -16,6 +17,7 @@ public class MainMenu
         _updateBooking = new UpdateBooking();
         _hotelLoader = new HotelLoader();
         _sortPrices = new SortPrices();
+        _cancelBookings = new CancelBookings();
     }
     public void start()
     {
@@ -34,7 +36,7 @@ public class MainMenu
                 case "3": _updateBooking.UpdateBookingQuestions(); 
                     break;
                 case "4":
-                    _sortPrices.PrintSortByPrice();
+                    _cancelBookings.CancelBooking();
                     break;
                 case "5": break;
                 case "x":
