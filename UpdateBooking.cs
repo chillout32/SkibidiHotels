@@ -33,6 +33,8 @@ public class UpdateBooking
                     cmd.Parameters.AddWithValue("CheckOut", newCheckOut);
                     cmd.Parameters.AddWithValue("TotalGuests", totalGuests);
                     cmd.Parameters.AddWithValue("BookingID", bookingID);
+                    
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
@@ -40,6 +42,8 @@ public class UpdateBooking
         {
             Console.WriteLine(ex.Message);
         }
+
+        
     }
 
     public void UpdateBookingQuestions()
