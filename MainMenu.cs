@@ -8,12 +8,14 @@ public class MainMenu
     private RegisterCustomer _registerCustomer;
     private UpdateBooking _updateBooking;
     private HotelLoader _hotelLoader;
+    private SortPrices _sortPrices;
 
     public MainMenu()
     {
         _registerCustomer = new RegisterCustomer();
         _updateBooking = new UpdateBooking();
         _hotelLoader = new HotelLoader();
+        _sortPrices = new SortPrices();
     }
     public void start()
     {
@@ -31,7 +33,9 @@ public class MainMenu
                 case "2": break;
                 case "3": _updateBooking.UpdateBookingQuestions(); 
                     break;
-                case "4": break;
+                case "4":
+                    _sortPrices.PrintSortByPrice();
+                    break;
                 case "5": break;
                 case "x":
                     Environment.Exit(0); 
