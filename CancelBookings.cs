@@ -7,9 +7,7 @@ public class CancelBookings
 {
     public void CancelBooking()
     {
-        
-        string connectionString = "Host=localhost;Username=postgres;Password=Aqws12aqwsed;Database=postgres";
-        
+        DatabaseConnect _dbconnect = new DatabaseConnect();        
         //Sub Menu Cancel Booking.
         Console.WriteLine("Submit your booking ID:");
         string input = Console.ReadLine();
@@ -17,28 +15,26 @@ public class CancelBookings
 
         if (int.TryParse(input, out int bookingId))
         {
-            using (var connection = new NpgsqlConnection(connectionString))
-            {
                 try
                 {
-                    connection.Open();
-
-                    string deleteQuery = "DELETE FROM bookings WHERE bookings_id = @bookings_id";
-                    
-                    using (var cmd = new NpgsqlCommand(deleteQuery, connection))
+                    using (var conn = _dbconnect.GetConnection())
                     {
-                        
-                        cmd.Parameters.AddWithValue("bookings_id", bookingId);  // Use the user-provided booking ID
-                        
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        
-                        if (rowsAffected > 0)
+                        string deleteQuery = "DELETE FROM bookings WHERE bookings_id = @bookings_id";
+
+                        using (var cmd = new NpgsqlCommand(deleteQuery, conn))
                         {
-                            Console.WriteLine($"Successfully deleted booking with ID {bookingId}.");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"No booking found with ID {bookingId}. No rows were deleted.");
+                            cmd.Parameters.AddWithValue("bookings_id", bookingId); // Use the user-provided booking ID
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"Successfully deleted booking with ID {bookingId}.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"No booking found with ID {bookingId}. No rows were deleted.");
+                            }
                         }
                     }
                 }
@@ -46,7 +42,6 @@ public class CancelBookings
                 {
                     Console.WriteLine("Error: " + ex.Message);
                 }
-            }
         }
         else
         {
