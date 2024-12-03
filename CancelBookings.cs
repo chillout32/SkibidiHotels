@@ -8,7 +8,7 @@ public class CancelBookings
     public void CancelBooking()
     {
         
-        string connectionString = "Host=localhost;Username=postgres;Password=asdfasdf;Database=postgres";
+        string connectionString = "Host=localhost;Username=postgres;Password=Aqws12aqwsed;Database=postgres";
         
         //Sub Menu Cancel Booking.
         Console.WriteLine("Submit your booking ID:");

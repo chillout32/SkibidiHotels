@@ -28,9 +28,10 @@ public class MainMenu
     public void start()
     {
         bool run = true;
-        questions();
+        
         while (run)
         {
+            questions();
             string answer = Console.ReadLine();
 
             switch (answer.Trim().ToLower())
@@ -51,7 +52,7 @@ public class MainMenu
                     _sortPrices.PrintSortByPrice();
                     break;
                 case "x":
-                    Environment.Exit(0); 
+                    run = false;
                     break;
             }
         }
