@@ -64,7 +64,7 @@ public class MainMenu
         Console.WriteLine("2. List Hotels and sort by reviews/stars");
         Console.WriteLine("3. List Hotels and sort by distance to beach");
         Console.WriteLine("4. Change details in a booking");
-        Console.WriteLine("5. Sort by price");
+        Console.WriteLine("5. List hotels and sort by price");
         Console.WriteLine("x. Exit program");
     }
 }
