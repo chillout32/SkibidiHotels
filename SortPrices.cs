@@ -15,7 +15,7 @@ public class SortPrices
         using (var connection = _dbConnect.GetConnection())
         {
             
-            string query = "SELECT r.roomnumber, r.pricepernight, h.hotel_name FROM rooms r INNER JOIN hotels h ON r.hotels_id = h.hotels_id ORDER BY r.pricepernight DESC";
+            string query = "SELECT r.roomnumber, r.pricepernight, h.hotel_name FROM rooms r INNER JOIN hotels h ON r.hotels_id = h.hotels_id ORDER BY r.pricepernight ASC";
 
             using (var command = new NpgsqlCommand(query, connection))
             using (var reader = command.ExecuteReader())
