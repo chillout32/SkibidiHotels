@@ -59,24 +59,24 @@ public class RegisterBooking
             {
 
                 string query = "INSERT INTO Bookings (client_id, room_id, allinclusive, halfpension, extrabed, totalprice, checkin, checkout, peopleamount)" +
-                               "VALUES (@client_id, @room_id, @allinclusive, @halfpension, @extrabed, @totalprice, @checkin, @checkout, @peopleamount)";
+                               "VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@client_id", clientId);
-                    cmd.Parameters.AddWithValue("@room_id", roomId);
-                    cmd.Parameters.AddWithValue("@allinclusive", allInclusive);
-                    cmd.Parameters.AddWithValue("@halfpension", halfPension);
-                    cmd.Parameters.AddWithValue("@extrabed", extraBed);
-                    cmd.Parameters.AddWithValue("@totalprice", totalPrice);
-                    cmd.Parameters.AddWithValue("@checkin", checkinTime);
-                    cmd.Parameters.AddWithValue("@checkout", checkoutTime);
-                    cmd.Parameters.AddWithValue("@peopleamount", totalpeopleAmount);
+                    cmd.Parameters.AddWithValue(clientId);
+                    cmd.Parameters.AddWithValue(roomId);
+                    cmd.Parameters.AddWithValue(allInclusive);
+                    cmd.Parameters.AddWithValue(halfPension);
+                    cmd.Parameters.AddWithValue(extraBed);
+                    cmd.Parameters.AddWithValue(totalPrice);
+                    cmd.Parameters.AddWithValue(checkinTime);
+                    cmd.Parameters.AddWithValue(checkoutTime);
+                    cmd.Parameters.AddWithValue(totalpeopleAmount);
                     
                     cmd.ExecuteNonQuery();
                 }
 
-                Console.WriteLine("Customer registered successfully!");
+                Console.WriteLine("Booking registered successfully!");
             }
         }
         catch (Exception ex)
