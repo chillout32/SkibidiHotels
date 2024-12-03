@@ -5,26 +5,12 @@ namespace skibidihotels;
 
 public class MainMenu
 {
-    private RegisterCustomer _registerCustomer;
-    private UpdateBooking _updateBooking;
-    private HotelLoader _hotelLoader;
-    private SortByReview _sortByReview;
-    private SortByDstncBeach _sortByDstncBeach;
-
-    private SortPrices _sortPrices;
-
-    public MainMenu()
-    {
-        _registerCustomer = new RegisterCustomer();
-        _updateBooking = new UpdateBooking();
-        _hotelLoader = new HotelLoader();
-
-        _sortByReview = new SortByReview();
-        _sortByDstncBeach = new SortByDstncBeach();
-
-        _sortPrices = new SortPrices();
-
-    }
+    private RegisterCustomer _registerCustomer = new();
+    private UpdateBooking _updateBooking  = new();
+    private SortByReview _sortByReview = new();
+    private SortByDstncBeach _sortByDstncBeach = new();
+    private SortPrices _sortPrices = new();
+    private CancelBookings _cancelBookings = new();
     public void start()
     {
         bool run = true;
@@ -37,22 +23,25 @@ public class MainMenu
             {
                 case "1": 
                     _registerCustomer.RegisterCustomers(); 
-                    break;
+                    return;
                 case "2": 
                     _sortByReview.PrintHotelsAndStars();
-                    break;
+                    return;
                 case "3": 
                     _sortByDstncBeach.SortByDistance();
-                    break;
+                    return;
                 case "4":
                     _updateBooking.UpdateBookingQuestions(); 
-                    break;
+                    return;
                 case "5":
                     _sortPrices.PrintSortByPrice();
-                    break;
+                    return;
+                case "6":
+                    _cancelBookings.CancelBooking();
+                    return;
                 case "x":
                     Environment.Exit(0); 
-                    break;
+                    return;
             }
         }
     }
@@ -64,7 +53,8 @@ public class MainMenu
         Console.WriteLine("2. List Hotels and sort by reviews/stars");
         Console.WriteLine("3. List Hotels and sort by distance to beach");
         Console.WriteLine("4. Change details in a booking");
-        Console.WriteLine("5. List hotels and sort by price");
+        Console.WriteLine("5. List rooms and sort by price");
+        Console.WriteLine("6. List bookings and cancel bookings");
         Console.WriteLine("x. Exit program");
     }
 }
