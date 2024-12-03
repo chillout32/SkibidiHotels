@@ -11,13 +11,19 @@ public class MainMenu
     private SortByReview _sortByReview;
     private SortByDstncBeach _sortByDstncBeach;
 
+    private SortPrices _sortPrices;
+
     public MainMenu()
     {
         _registerCustomer = new RegisterCustomer();
         _updateBooking = new UpdateBooking();
         _hotelLoader = new HotelLoader();
+
         _sortByReview = new SortByReview();
         _sortByDstncBeach = new SortByDstncBeach();
+
+        _sortPrices = new SortPrices();
+
     }
     public void start()
     {
@@ -41,7 +47,9 @@ public class MainMenu
                 case "4":
                     _updateBooking.UpdateBookingQuestions(); 
                     break;
-                case "5": break;
+                case "5":
+                    _sortPrices.PrintSortByPrice();
+                    break;
                 case "x":
                     Environment.Exit(0); 
                     break;
@@ -56,7 +64,7 @@ public class MainMenu
         Console.WriteLine("2. List Hotels and sort by reviews/stars");
         Console.WriteLine("3. List Hotels and sort by distance to beach");
         Console.WriteLine("4. Change details in a booking");
-        Console.WriteLine("5. Register booking");
+        Console.WriteLine("5. Sort by price");
         Console.WriteLine("x. Exit program");
     }
 }
