@@ -35,16 +35,15 @@ public class RegisterCustomer
             {
 
                 string query = "INSERT INTO clients (firstname, lastname, email, phonenumber, dateofbirth) " +
-                               "VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @DateOfBirth)";
+                               "VALUES ($1, $2, $3, $4, $5)";
 
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("FirstName", firstName);
-                    cmd.Parameters.AddWithValue("LastName", lastName);
-                    cmd.Parameters.AddWithValue("Email", email);
-                    cmd.Parameters.AddWithValue("PhoneNumber", phoneNumber);
-                    cmd.Parameters.AddWithValue("DateOfBirth", DateTime.Parse(dob));
-
+                    cmd.Parameters.AddWithValue(lastName);
+                    cmd.Parameters.AddWithValue(firstName);
+                    cmd.Parameters.AddWithValue(email);
+                    cmd.Parameters.AddWithValue(phoneNumber);
+                    cmd.Parameters.AddWithValue(DateTime.Parse(dob));
                     cmd.ExecuteNonQuery();
                 }
 
