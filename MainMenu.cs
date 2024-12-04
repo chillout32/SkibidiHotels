@@ -29,7 +29,8 @@ public class MainMenu
                     _registerCustomer.RegisterCustomers(); 
                     break;
                 case "2": break;
-                case "3": _updateBooking.UpdateBookingQuestions(); 
+                case "3": 
+                    _updateBooking.UpdateBookingQuestions(); 
                     break;
                 case "4": break;
                 case "5": break;
