@@ -8,7 +8,7 @@ public class SortByReview
 
         if (hotels == null || hotels.Count == 0)
         {
-            Console.WriteLine("No hotels to sort (get back to work slave).");
+            Console.WriteLine("No hotels to sort.");
             return;
         }
 

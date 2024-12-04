@@ -71,11 +71,26 @@ public class UpdateBooking
         string halfpensionInput = Console.ReadLine().ToLower();
         bool halfPension = halfpensionInput == "yes";
         
-        Console.WriteLine("What time do you want to check in (format: yyyy-MM-dd HH:mm)");
-        DateTime newCheckIn = DateTime.Parse(Console.ReadLine());
+        DateTime newCheckIn;
+        DateTime newCheckOut;
+        
+        Console.WriteLine("What time do you want to check in (format: yyyy-MM-dd HH:mm):");
+        newCheckIn = DateTime.Parse(Console.ReadLine());
+        
+        while (true)
+        {
+            Console.WriteLine("What time do you want to check out (format: yyyy-MM-dd HH:mm):");
+            newCheckOut = DateTime.Parse(Console.ReadLine());
 
-        Console.WriteLine("What time do you want to check out (format: yyyy-MM-dd HH:mm):");
-        DateTime newCheckOut = DateTime.Parse(Console.ReadLine());
+            if (newCheckOut > newCheckIn)
+            {
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Check-out time must be after check-in time. Please enter a valid time.");
+            }
+        }
 
          
         UpdateBookingFunction(_dbConnect,bookingID, newCheckIn, newCheckOut, totalGuests, roomID, extraBed, allInclusive, halfPension);
