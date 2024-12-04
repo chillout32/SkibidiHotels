@@ -22,7 +22,7 @@ public class RegisterBooking
         bool halfPension = BooleanConverter("Does the client have half-pension? (yes/no):");
         
         bool extraBed = BooleanConverter("Does the client want an extra bed? (yes/no):");
-        
+
         Console.WriteLine("Enter the totalprice for the booking:");
         int totalPrice = int.Parse(Console.ReadLine());
         
