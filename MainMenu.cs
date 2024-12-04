@@ -10,6 +10,7 @@ public class MainMenu
     private HotelLoader _hotelLoader;
     private SortByReview _sortByReview;
     private SortByDstncBeach _sortByDstncBeach;
+    private ShowInfo _showInfo;
 
     private SortPrices _sortPrices;
 
@@ -19,6 +20,7 @@ public class MainMenu
         _updateBooking = new UpdateBooking();
         _hotelLoader = new HotelLoader();
 
+        _showInfo = new ShowInfo();
         _sortByReview = new SortByReview();
         _sortByDstncBeach = new SortByDstncBeach();
 

@@ -51,6 +51,8 @@ public class UpdateBooking
         DatabaseConnect _dbConnect = new DatabaseConnect();
         
         Console.WriteLine("Whats your booking id");
+        Console.WriteLine("Here's all the booking id's that's registered");
+        ShowInfo.FetchBookingsAndClient();
         int bookingID = int.Parse(Console.ReadLine());
         
         Console.WriteLine("How many guests total will come");
