@@ -50,7 +50,9 @@ public class UpdateBooking
     {
         DatabaseConnect _dbConnect = new DatabaseConnect();
         
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Whats your booking id");
+        Console.ResetColor(); 
         Console.WriteLine("Here's all the booking id's that's registered");
         ShowInfo.FetchBookingsAndClient();
         int bookingID = int.Parse(Console.ReadLine());
@@ -58,7 +60,11 @@ public class UpdateBooking
         Console.WriteLine("How many guests total will come");
         int totalGuests = int.Parse(Console.ReadLine());
         
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Do you want to change room, please enter a new room ID (admin)");
+        Console.ResetColor();
+        Console.WriteLine("Here's all the avaible rooms to switch!");
+        FetchAvailableRooms.FetchRooms();
         int roomID = int.Parse(Console.ReadLine());
         
         Console.WriteLine("Do you want a extra bed, (yes/no)?");
@@ -93,7 +99,9 @@ public class UpdateBooking
                 Console.WriteLine("Check-out time must be after check-in time. Please enter a valid time.");
             }
         }
-
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Thank you for updating your booking!");
+        Console.ResetColor();
          
         UpdateBookingFunction(_dbConnect,bookingID, newCheckIn, newCheckOut, totalGuests, roomID, extraBed, allInclusive, halfPension);
     }

@@ -12,7 +12,7 @@ public class ShowInfo
     
         using (var connection = _dbConnect.GetConnection())
         {
-            string query = "SELECT b.bookings_id, c.firstname, c.lastname FROM bookings b INNER JOIN clients c ON b.client_id = c.id";
+            string query = "SELECT bookings_id, firstname, lastname FROM bookings INNER JOIN clients ON client_id = id";
 
             using (var cmd = new NpgsqlCommand(query, connection))
             using (var reader = cmd.ExecuteReader())
