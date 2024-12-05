@@ -5,28 +5,14 @@ namespace skibidihotels;
 
 public class MainMenu
 {
-    private RegisterCustomer _registerCustomer;
-    private UpdateBooking _updateBooking;
-    private HotelLoader _hotelLoader;
-    private SortByReview _sortByReview;
-    private SortByDstncBeach _sortByDstncBeach;
-    private ShowInfo _showInfo;
-
-    private SortPrices _sortPrices;
-
-    public MainMenu()
-    {
-        _registerCustomer = new RegisterCustomer();
-        _updateBooking = new UpdateBooking();
-        _hotelLoader = new HotelLoader();
-
-        _showInfo = new ShowInfo();
-        _sortByReview = new SortByReview();
-        _sortByDstncBeach = new SortByDstncBeach();
-
-        _sortPrices = new SortPrices();
-
-    }
+    private RegisterCustomer _registerCustomer = new();
+    private UpdateBooking _updateBooking = new();
+    private SortByReview _sortByReview = new();
+    private SortByDstncBeach _sortByDstncBeach = new ();
+    private CancelBookings _cancelBookings = new();
+    private SortPrices _sortPrices = new();
+    private RegisterBooking _registerBooking = new();
+    
     public void start()
     {
         bool run = true;
@@ -53,6 +39,12 @@ public class MainMenu
                 case "5":
                     _sortPrices.PrintSortByPrice();
                     break;
+                case "6":
+                    _cancelBookings.CancelBooking();
+                    break;
+                case "7":
+                    _registerBooking.RegisterBookings();
+                    break;
                 case "x":
                     run = false;
                     break;
@@ -68,6 +60,8 @@ public class MainMenu
         Console.WriteLine("3. List Hotels and sort by distance to beach");
         Console.WriteLine("4. Change details in a booking");
         Console.WriteLine("5. List hotels and sort by price");
+        Console.WriteLine("6. Cancel a registered booking");
+        Console.WriteLine("7. Register booking");
         Console.WriteLine("x. Exit program");
     }
 }

@@ -7,9 +7,10 @@ public class CancelBookings
 {
     public void CancelBooking()
     {
-        DatabaseConnect _dbconnect = new DatabaseConnect();        
+        DatabaseConnect _dbconnect = new DatabaseConnect();
+        BookingData.DisplayBookings();
         //Sub Menu Cancel Booking.
-        Console.WriteLine("Submit your booking ID:");
+        Console.WriteLine("Enter ID you wish to cancel:");
         string input = Console.ReadLine();
         //DELETE BOOKING BY ID
 
