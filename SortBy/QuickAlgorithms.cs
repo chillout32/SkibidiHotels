@@ -25,6 +25,6 @@ public class QuickAlgorithms
         }
 
         if (left < q) QuickSortStars(data, left, q);
-        if (x > right) QuickSortStars(data, x, right);
+        if (x < right) QuickSortStars(data, x, right);
     }
 }

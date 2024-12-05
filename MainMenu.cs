@@ -34,7 +34,7 @@ public class MainMenu
                     _sortByDstncBeach.SortByDistance();
                     break;
                 case "4":
-                    _updateBooking.UpdateBookingQuestions(); 
+                    _updateBooking.UpdateBookings(); 
                     break;
                 case "5":
                     _sortPrices.PrintSortByPrice();

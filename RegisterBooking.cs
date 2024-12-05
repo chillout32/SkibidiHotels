@@ -20,7 +20,7 @@ public class RegisterBooking
 
             if (checkoutTime <= checkinTime)
             {
-                Console.WriteLine("Error: The checkout time must be later than the check-in time. Please enter again.");
+                Console.WriteLine("Error: The checkout time defies the laws of time. Please enter again.");
             }
             else
             {
@@ -28,7 +28,7 @@ public class RegisterBooking
             }
         }
 
-        List<Room> availableRooms = GetAvailableRooms(_dbConnect, checkinTime, checkoutTime); // Change to List<Room>
+        List<Room> availableRooms = GetAvailableRooms(_dbConnect, checkinTime, checkoutTime);
 
         if (availableRooms.Count == 0)
         {
