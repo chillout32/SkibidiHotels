@@ -12,6 +12,7 @@ public class MainMenu
     private CancelBookings _cancelBookings = new();
     private SortPrices _sortPrices = new();
     private RegisterBooking _registerBooking = new();
+    private FilterDistance _filterDistance = new();
     
     public void start()
     {
@@ -45,6 +46,12 @@ public class MainMenu
                 case "7":
                     _registerBooking.RegisterBookings();
                     break;
+                case "8":
+                    _filterDistance.FilterDistanceToBeach();
+                    break;
+                case "9":
+                    _filterDistance.FilterDistanceToCentrum();
+                    break;
                 case "x":
                     run = false;
                     break;
@@ -62,6 +69,8 @@ public class MainMenu
         Console.WriteLine("5. List hotels and sort by price");
         Console.WriteLine("6. Cancel a registered booking");
         Console.WriteLine("7. Register booking");
+        Console.WriteLine("8. Filter distance to beach");
+        Console.WriteLine("9. Filter distance to centrum");
         Console.WriteLine("x. Exit program");
     }
 }
