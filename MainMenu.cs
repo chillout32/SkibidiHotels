@@ -49,6 +49,9 @@ public class MainMenu
                 case "8":
                     _filterDistance.FilterDistanceToBeach();
                     break;
+                case "9":
+                    _filterDistance.FilterDistanceToCentrum();
+                    break;
                 case "x":
                     run = false;
                     break;
@@ -67,6 +70,7 @@ public class MainMenu
         Console.WriteLine("6. Cancel a registered booking");
         Console.WriteLine("7. Register booking");
         Console.WriteLine("8. Filter distance to beach");
+        Console.WriteLine("9. Filter distance to centrum");
         Console.WriteLine("x. Exit program");
     }
 }
